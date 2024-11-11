@@ -54,7 +54,7 @@ while True:
 
     elif opcion == 2:
         print('\n inventario de producto')
-        for i in  range(len(nombre)):
+        for i in  range(len(nombres)):
             print(f'producto {i+1}: {nombres[i].capitalize()}. precio : ${precios[i]:.2f}, cantidad: {cantidades[i]}')
 
     elif opcion == 3:
