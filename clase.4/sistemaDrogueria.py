@@ -2,9 +2,11 @@
 ventasTotales = 0 
 
 
-#solicitar el nuero de productos 
+#solicitar el nuero de productos
 numProductos = int(input('ingrese el numero de productos a gestionar: '))
-
+if numProductos <= 0: 
+    print('no se permiten numeros negativos: ')
+else: 
 
 #listas para almacenar la informacion 
 nombres = []
