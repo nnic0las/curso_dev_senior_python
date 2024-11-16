@@ -59,7 +59,7 @@ def mostrarEstudiantes():
     if estudiantes:
         print('lista de estudiantes matriculados ')
         for estudiante in estudiantes:
-            print(f'estudiante: {estudiante['nombre']}, curso: {estudiante['curso']}')
+            print(f"estudiante: {estudiante['nombre']}, curso: {estudiante['curso']}")
     else:
         print('no hay estudiantes matriculados')
 
@@ -67,7 +67,7 @@ def mostrarDocentes():
     if docentes:
         print('lista de docentes asignados')
         for docente in docentes:
-            print(f'docente : {docente['nombre']}, curso: {docente['curso']}')
+            print(f"docente : {docente['nombre']}, curso: {docente['curso']}")
     else:
         print('no hay docentes asignados')
 
@@ -76,7 +76,7 @@ def mostrarHorario():
     if horarios:
         print('\nhorarios de los cursos ')
         for horario in horarios:
-            print(f'curso: {horario['curso']}, dias: {horario['dias']}, hora: {horario['hora']}')
+            print(f"curso: {horario['curso']}, dias: {horario['dias']}, hora: {horario['hora']}")
     else:
         print('no hay horarios asignados ')
 
@@ -84,17 +84,30 @@ def mostrarHorario():
 ##menu
 while True:
     print('\n sistema de matricula de dev senior')
-    print('\n 1. matriculas estudiante.')
-    print('\n 2. asignar docente a un curso.')
-    print('\n 3. asignar horario a un curso.')
-    print('\n 4. mostrar la lista de los estudiantes matriculados.')
-    print('\n 5. mostras la lista de docentes asignados.')
-    print('\n 6. mostrar horarios de los cursos.')
-    print('\n 7. salir.')
-    
+    print('1. matriculas estudiante.')
+    print('2. asignar docente a un curso.')
+    print('3. asignar horario a un curso.')
+    print('4. mostrar la lista de los estudiantes matriculados.')
+    print('5. mostras la lista de docentes asignados.')
+    print('6. mostrar horarios de los cursos.')
+    print('7. salir.')
 
+    opcion = int(input('digite la opcion: '))
 
-
-
-
-
+    if opcion == 1:
+        matricularEstudiante()
+    elif opcion == 2:
+        asignarDocente()
+    elif opcion == 3:
+        asignarHorario()
+    elif opcion == 4:
+        mostrarEstudiantes()
+    elif opcion == 5:
+        mostrarDocentes()
+    elif opcion == 6:
+        mostrarHorario()
+    elif opcion == 7:
+        print('gracias por usar el sistema de matriculas de dev senior')
+        break
+    else:
+        print('opcion no valida, intente de nuevo')        
