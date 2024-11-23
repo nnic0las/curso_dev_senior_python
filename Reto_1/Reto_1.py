@@ -6,10 +6,25 @@
 LISTADeExperimentos = [
     "experimento 1", "16/11/2024", "quimica", [5,3,4,5,6,44],
 ]
-import datatime
-def agregarExperimento():
-    '''funcion permite un nuevo experimento con sus atributos'''
+from datetime import datetime
+ ##funcion permite un nuevo experimento con sus atributos
+def agregarExperimento():   
     pass
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #permite eliminar un experimento,    
 def eliminarExperimento():
  pass
