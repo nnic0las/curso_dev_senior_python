@@ -68,14 +68,14 @@ def gernerarInforme(listaTareas):
 
 ## abrir un archivo txt para escribir un informe 
 
-with open('informe_tareas.txt', 'w') as archivo:
-    for tarea in listaTareas:
-        archivo.write(f"nombre: {tarea.nombre}\n")
-        archivo.write(f"fecha limite: {tarea.fechaLimite.strftime ('%d, %m, %Y')}\n")
-        archivo.write(f"categoria: {tarea.categoria}\n")
-        archivo.write(f"horas dedicadas: {tarea.horasDedicadas}\n")
-        archivo.write("\n")
-print('informe generado como "informe_tareas.txt"')
+    with open('informe_tareas.txt', 'w') as archivo:
+        for tarea in listaTareas:
+            archivo.write(f"nombre: {tarea.nombre}\n")
+            archivo.write(f"fecha limite: {tarea.fechaLimite.strftime ('%d, %m, %Y')}\n")
+            archivo.write(f"categoria: {tarea.categoria}\n")
+            archivo.write(f"horas dedicadas: {tarea.horasDedicadas}\n")
+            archivo.write("\n")
+    print('informe generado como "informe_tareas.txt"')
 
 def menu():
 
