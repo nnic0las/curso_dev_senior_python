@@ -38,7 +38,7 @@ def agregarTarea(listaTareas):
 def VisualizarTareas(listaTareas):
     if not listaTareas:
         print("no hay tareas reguistradas ")
-        return
+        return      
     for i, tarea in enumerate(listaTareas, start=1):
         print(f"\nTareas {i}")
         print(f"nombre: {tarea.nombre}")
