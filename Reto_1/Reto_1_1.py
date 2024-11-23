@@ -71,15 +71,15 @@ def generarInforme(listaExperimentos):
         print("no hay experimentos agregados")
         return
     
-with open('informe_resultados_experimento.txt','w') as archivo:
-    for experimento in listaExperimentos:
-        archivo.write(f"Nombre: {experimento.nombreExperimento}\n")
-        archivo.write(f"Fecha de realizacion: {experimento.fechaDeRealizacion}\n")
-        archivo.write(f"Tipos de experimento: {experimento.tipoExperimento}\n")
-        archivo.write(f"resultados del experimento: {experimento.resultadoExperimento}\n")
-        archivo.write("\n")
+    with open('informe_resultados_experimento.txt','w') as archivo:
+        for experimento in listaExperimentos:
+            archivo.write(f"Nombre: {experimento.nombreExperimento}\n")
+            archivo.write(f"Fecha de realizacion: {experimento.fechaDeRealizacion}\n")
+            archivo.write(f"Tipos de experimento: {experimento.tipoExperimento}\n")
+            archivo.write(f"resultados del experimento: {experimento.resultadoExperimento}\n")
+            archivo.write("\n")
 
-print("el informe solicitado con los analizis se a generado correctamente como 'informe_resultados_experimento.txt'")
+    print("el informe solicitado con los analizis se a generado correctamente como 'informe_resultados_experimento.txt'")
 
 
 
