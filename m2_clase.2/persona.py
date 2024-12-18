@@ -13,7 +13,7 @@ class Persona:
         return f"Cuneta Bancaria: {self.__cuentaBancaria}"
 
     def mostrarInformacionCompleta(self):
-        return self.__mostrarCuenta
+        return self.__mostrarCuenta()
     
 persona1 = Persona("nicolas mendoza", 22)
 
@@ -21,3 +21,5 @@ print(persona1.nombre)
 print(persona1._edad)
 
 print(persona1.mostrarInformacion())
+
+print(persona1.mostrarInformacionCompleta())
