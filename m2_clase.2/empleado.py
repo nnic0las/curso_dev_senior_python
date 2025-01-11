@@ -3,6 +3,7 @@ class Empleado:
     def __init__(self, nombre, salario):
         self._nombre = nombre
         self._salario = salario
+        self.salarioMinimo = 1300000
 
     def mostrarInformacion(self):
         return f"Nombre: {self._nombre}, Salario: {self._salario}"
@@ -11,12 +12,12 @@ class Empleado:
         return self._salario
 
     def establecerSalario(self, nuevoSalario):
-        if nuevoSalario < 1300000:
+        if nuevoSalario < self.salarioMinimo:
             return f"El salario no puede ser menor al salario minimo"
         self._salario = nuevoSalario
         return f"El nuevo salario es: {self._salario}"
     
-empleado1 = Empleado("carlos", 1300000)
+empleado1 = Empleado("carlos", 1500000)
 
 print(empleado1.mostrarInformacion())
 print(empleado1.obtenerSalario())
