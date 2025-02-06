@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 #clases abstractas, superclase
-class Clases(ABC)
+class Clases(ABC):
     @abstractmethod
     def operacion(self):
         pass
