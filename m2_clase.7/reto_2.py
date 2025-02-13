@@ -106,7 +106,6 @@ class SistemaVeterinaria:
         
 
     def programar_cita(self):
-
         try:
             nombre_cliente = input("Ingrese el nombre del cliente: ").strip()
             nombre_mascota = input("Ingrese el nombre de la mascota: ").strip()
@@ -115,7 +114,7 @@ class SistemaVeterinaria:
             if not cliente:
                 raise ValueError("cliente no encontrado....")
             
-            mascota = next((m for m in self.clientes.mascotas if m.nombre == nombre_mascota), None)
+            mascota = next((m for m in cliente.mascotas if m.nombre == nombre_mascota), None)
             if not mascota:
                 raise ValueError("mascota no encontrada...")
             
