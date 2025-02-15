@@ -63,7 +63,7 @@ def division_completa():
 
 division_completa()
 
-"""
+
 #===============================================
 #5
 #app que permite procesar perdidos
@@ -93,6 +93,14 @@ def procesar_pedidos():
     finally:
         print("operacion finalizada")
 
-procesar_pedidos()    
+procesar_pedidos() 
+
+"""
+#=====================================
+#6
+#exepciones personalizadas
+
+
+
 
 
