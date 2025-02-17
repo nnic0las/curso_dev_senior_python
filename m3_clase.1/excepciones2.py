@@ -100,6 +100,43 @@ procesar_pedidos()
 #6
 #exepciones personalizadas
 
+class ErrorDePago(Exception):
+    """gestion de excepciones"""
+    pass
+
+class PasarelaDePago():
+    """simulacion una estrategia tegnologica de pago"""
+
+    @staticmethod
+    def procesar_pago(numero_tarjeta, monto):
+
+        if not numero_tarjeta.startswith("4"):
+            raise ErrorDePago("el numero de la tarjeta no es valido")
+
+        if monto <= 0: 
+            raise ErrorDePago("El monto debe ser mayor a cero")
+            
+        return f"pago de ${monto} fue procesado con exito"
+
+def procesarPagoCliente(nombre_cliente, numero_tarjeta, monto):
+    try:
+        print(f"Iniciando el proceso de pago para {nombre_cliente}")
+        resultado = PasarelaDePago.procesar_pago(numero_tarjeta, monto)
+
+    except ErrorDePago as e:
+        print(f"Error al procesar el pago {e}")
+    except Exception as e:
+        print(f"Se produjo un error inesperado {e}")
+    else:
+        print(resultado)
+    finally:
+        print("Registro finalizado")
+
+if __name__ == "__main__":
+    procesarPagoCliente("nicolas", "4321", 99.00)
+    procesarPagoCliente("luisa", "123", 100.00)
+
+
 
 
 
