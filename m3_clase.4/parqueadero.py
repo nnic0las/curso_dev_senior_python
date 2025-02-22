@@ -1,5 +1,5 @@
-import tkinder as tk
-from tkinder import messagebox
+import tkinter as tk
+from tkinter import  ttk,messagebox
 import datetime
 
 class Vehiculo:
@@ -14,20 +14,40 @@ class Vehiculo:
 
 class ParqueaderoApp:
     #podemos llamarla como ventana o root
-    def __init__(self, ventana):
-        self.ventana = ventana
-        self.ventana.title("Control de Parqueadero")
-        self.ventana.geometry("500x400")
+    def __init__(self, root):
+        self.root = root
+        self.root.title("Control de Parqueadero")
+        self.root.geometry("500x400")
 
         self.vehiculos = {}
 
         #Entrada de la placa
-        tk.Label(ventana, text="Placa del Vehiculo:").pack(pady=5)#texto
-        self.entry_placa = tk.Entry(ventana) #caja de texto
+        tk.Label(root, text="Placa del Vehiculo:").pack(pady=5)#texto
+        self.entry_placa = tk.Entry(root) #caja de texto
         self.entry_placa.pack(pady=5)
 
         #botones
-        tk.Button(ventana, text="Registro Entrada", command="").pack(pady=5)
+        tk.Button(root, text="Registro Entrada", command=self.registro_entrada).pack(pady=5)
+        tk.Button(root, text="Registro Salida", command="").pack(pady=5)
+
+        #Tabla de vehiculos
+        self.tree = ttk.Treeview(root, columns=("Placa", "Hora de Entrada", "Hora de salida"), show="headings")
+        self.tree.heading("Placa", text="Placa")
+        self.tree.heading("Hora de Entrada", text="Hora de Entrada")
+        self.tree.heading("Hora de Salida", text="Hora de Salida")
+
+        self.tree.pack(pady=10, fill="both", expand=True)
+
+    def registro_entrada(self):
+        placa = self.entry_placa.get.upper()
+        if placa and placa not in self.vehiculos:
+            hora_actual = datetime.datetime.now().strftime("%H:%M:%S")
+            self.vehiculos[placa] = Vehiculo(placa, datetime.datetime.now())
+
+            self.tree.insert("","end")
+
+
+
         
 root = tk.Tk()
 app = ParqueaderoApp(root)
