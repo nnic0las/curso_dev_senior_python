@@ -28,7 +28,7 @@ class ParqueaderoApp:
 
         #botones
         tk.Button(root, text="Registro Entrada", command=self.registro_entrada).pack(pady=5)
-        tk.Button(root, text="Registro Salida", command="").pack(pady=5)
+        tk.Button(root, text="Registro Salida", command=self.registrar_salida).pack(pady=5)
 
         #Tabla de vehiculos
         self.tree = ttk.Treeview(root, columns=("Placa", "Hora de Entrada", "Hora de salida"), show="headings")
@@ -44,7 +44,23 @@ class ParqueaderoApp:
             hora_actual = datetime.datetime.now().strftime("%H:%M:%S")
             self.vehiculos[placa] = Vehiculo(placa, datetime.datetime.now())
 
-            self.tree.insert("","end")
+            self.tree.insert("","end", iid=placa, values=(placa, hora_actual) )
+        else: 
+            messagebox.showerror("Error", "placa invalida o ya registrada")
+
+    def registrar_salida(self):
+        placa = self.entry_placa.get().upper()
+        if placa in self.vehiculos:
+            Vehiculo = self.vehiculos.pop(placa)
+            tiempo_parque = Vehiculo.calcular_tiempo()
+
+            #eliminar de la tabla
+            self.tree.delete(placa)
+
+            messagebox.showinfo("Salida ",f"vehiculo {placa} Salio. \nTiempo: {tiempo_parque: .2f}
+            minutos")
+        else:
+            messagebox.showerror("Error", "Vehiculo no encontrado")
 
 
 
