@@ -57,8 +57,7 @@ class ParqueaderoApp:
             #eliminar de la tabla
             self.tree.delete(placa)
 
-            messagebox.showinfo("Salida ",f"vehiculo {placa} Salio. \nTiempo: {tiempo_parque: .2f}
-            minutos")
+            messagebox.showinfo("Salida ",f"vehiculo {placa} Salio. \nTiempo: {tiempo_parque: .2f} minutos")
         else:
             messagebox.showerror("Error", "Vehiculo no encontrado")
 
